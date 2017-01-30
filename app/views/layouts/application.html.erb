@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arts</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+  <body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    
+    <div id="navbar">
+      <ul class="nav navbar-nav pull-right">
+        <% if current_user %>
+          <li class="text-primary"><span><%= current_user.email %></span></li>
+          <li><%= link_to 'Sign Out', sign_out_path, method: :delete, class: 'btn btn-danger btn-xs' %></li>
+        <% else %>
+          <li><%= link_to 'Sign In', sign_in_path, class: 'btn btn-success btn-xs' %></li>
+        <% end -%>
+      </ul>
+    </div>
+  </div>
+</nav>
+  	
+    <div id="main-container" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+          <% end -%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+    		<%= yield %>
+    	</div>
+      </div>
+    </div>
+  </body>
+</html>
+</body>
+</html>
