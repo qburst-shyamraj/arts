@@ -1,19 +1,31 @@
 
 <div class="container">
-	<div class="row">
-      <div class="col-xs-12">
-      <h2 style = "text-align:center" class = "text-primary">Welcome!</h2>
-		<h2 style = "text-align:center" class = "text-danger">Prism Arts and Sports Club</h2>
-	<h4 style = "text-align:center" class = "text-success">Online Chit Updates</h4>
-  	
-  	<p style = "text-align:center" class = "text-success">Admin Login.</p>
- 	 	<p style = "text-align:center">
-    	<%= link_to new_user_path, class: 'btn btn-primary btn-lg' do %>
-      	Admin login &raquo;
-    	<% end %>
-  	</p>
-  	
-	</div>
+  <div class="row">
+    <div class="col-xs-3">
+    <p style = "text-align:center">number finished: <%= @chits.count %></p>
+    <p style = "text-align:center">number left: <%= 58 - @chits.count %></p>
+    <p style = "text-align:center"><%= link_to "Add Details", new_chit_path, class: 'btn btn-primary btn-sm' %></p>
+    </div>
+    <div class="col-xs-9">
+      <div class="row">
+        <div class="col-xs-6">
+           <p style = "text-align:center"> your appointments for today are:</p>
+            
+      </div>
+        <div class="col-xs-6">
+          <div class="container">
+           <div class="col-xs-3">
+           <p style = "text-align:center">number of members: <%= @members.count%></p>
+          <p style = "text-align:center"><%= link_to "Show Members", {:action=>"new", :controller=>"members"}, class: 'btn btn-primary btn-sm'  %></p>
+          <p style = "text-align:center"><%= link_to "Add Member", new_member_path, class: 'btn btn-primary btn-sm' %></p>
+      </div>
+       
+      </div>
+        </div>
+            
+      </div>
+    </div>
   </div>
 </div>
+
 

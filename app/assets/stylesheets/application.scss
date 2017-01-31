@@ -19,10 +19,10 @@ body {
  background-color: green;
 /*  color: white;*/
  font-family: verdana, arial, helvetica, sans-serif;
- font-size: 13px;
+ font-size: 18px;
  font-color: white;
  line-height: 18px;
-	background: url('backgrnd.jpg');
+	background: url('6SnEo7R.jpg');
  background-repeat: no-repeat;
  background-size: 100%; 
 }
@@ -33,6 +33,16 @@ height: 40px;
 -webkit-border-radius: 30px; /* Safari3, Chome */
 border-radius: 30px; /* Opera 10.5, IE 9 */
 }
+label {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  padding: 2px;
+  text-transform: uppercase;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
 .dropbtn {
  background-color: none;
 padding: 0px;

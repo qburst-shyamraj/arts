@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130124702) do
+ActiveRecord::Schema.define(version: 20170131064817) do
+
+  create_table "chits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date     "date"
+    t.integer  "amount_recieved"
+    t.integer  "balance_amount"
+    t.string   "person_called"
+    t.integer  "bar"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "member_id"
+  end
 
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170130124702) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "chit_id"
   end
 
   create_table "user_sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -32,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170130124702) do
     t.string   "persistence_token"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "role"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
