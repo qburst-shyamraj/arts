@@ -1,0 +1,18 @@
+<p class = "strong" class = "text-success"><%=" The chits in the system"%> </p>
+<table class = "table table-bordered">
+  <tr class = "bg-success">
+    <th>Chit Id &nbsp; &nbsp; &nbsp;</th>
+    <th>Person Called</th>
+    <th>Bar</th>
+   </tr>
+<% @chits.each do |chit| %>
+    <tr class = "bg-info">
+     <td ><%= chit.id %></td>
+     <td><%= chit.person_called %></td>
+     <td><%= chit.bar%></td>
+    </tr>
+  
+<% end %>
+</table>    
+
+<%= link_to 'Back', {:action => "index", :controller => "pages"}, class: 'btn btn-default btn-sm'%>

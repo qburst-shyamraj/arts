@@ -15,6 +15,9 @@ class MembersController < ApplicationController
       render :new
     end
   end
+ 	def list
+ 		@members = Member.all
+ 	end
 
   private
 

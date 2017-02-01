@@ -29,5 +29,21 @@ module ApplicationHelper
 			puts message.to
 		end
 	end
+	def send_message_all(date)
+		@twilio_number = "+17604886429"
+		account_sid = "ACf6a85dfb54bb7e820879392f7e23542c"
+		auth_token = "9a5ea4d8a1d303da43c6276f498af264"
+		@client = Twilio::REST::Client.new account_sid, auth_token
+		@members = Member.all
+		@members.each do |member|
+			reminder = "Hi #{member.name}, there is meeting at #{date}. All are requested to attend it."
+			message = @client.account.messages.create(
+					:from => @twilio_number,
+					:to => "+91#{member.phone}",
+					:body => reminder,
+				)
+			puts message.to
+		end
+	end
 
 end

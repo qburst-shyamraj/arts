@@ -1,0 +1,22 @@
+<p class = "strong"><%=" The members in the system"%> </p>
+<table class = "table table-bordered">
+  <tr class = "bg-success">
+    <th>Member Id &nbsp; &nbsp; &nbsp;</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Chit No</th>
+   </tr>
+<% @members.each do |member| %>
+    <tr class = "bg-info">
+     <td ><%= member.id %></td>
+     <td><%= member.name %></td>
+     <td><%= member.phone %></td>
+     <td><%= member.address %></td>
+     <td> <%= member.chit_id%></td>
+    </tr>
+  
+<% end %>
+</table>    
+
+<%= link_to 'Back', {:action => "index", :controller => "pages"}, class: 'btn btn-default btn-sm'%>

@@ -15,6 +15,9 @@ class ChitsController < ApplicationController
       render :new
     end
   end
+  def list
+ 		@chits = Chit.all
+ 	end
 
   private
 
