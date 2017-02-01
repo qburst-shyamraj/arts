@@ -5,7 +5,7 @@ module ApplicationHelper
 		auth_token = "9a5ea4d8a1d303da43c6276f498af264"
 		@client = Twilio::REST::Client.new account_sid, auth_token
 		
-		reminder = "Hi #{member.name}, you have been added as a member in prism art club chits."
+		reminder = "Hi #{member.name}, you have been added as a member in prism art and sports club kurry."
 		message = @client.account.messages.create(
   			:from => @twilio_number,
   			:to => "+91#{member.phone}",
@@ -20,7 +20,7 @@ module ApplicationHelper
 		@client = Twilio::REST::Client.new account_sid, auth_token
 		@members = Member.all
 		@members.each do |member|
-			reminder = "Hi #{member.name}, the details are."
+			reminder = "Hi #{member.name}, Prism club kurry details - date: #{chit.date}, bar: #{chit.bar}, vilichath: #{chit.person_called}."
 			message = @client.account.messages.create(
 					:from => @twilio_number,
 					:to => "+91#{member.phone}",
@@ -36,7 +36,7 @@ module ApplicationHelper
 		@client = Twilio::REST::Client.new account_sid, auth_token
 		@members = Member.all
 		@members.each do |member|
-			reminder = "Hi #{member.name}, there is meeting at #{date}. All are requested to attend it."
+			reminder = "Hi #{member.name}, there is kurry(Prism club) at #{date}. All are requested to attend it."
 			message = @client.account.messages.create(
 					:from => @twilio_number,
 					:to => "+91#{member.phone}",
