@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :Person_called %>
-    <%= f.text_field :person_called, class: 'form-control' %>
+    <%= f.collection_select :person_called, Member.order(:name),:name, :name, include_blank: true %>
   </div>
 
   <div class="form-group">
