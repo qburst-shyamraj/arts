@@ -9,6 +9,8 @@ class ChitsController < ApplicationController
     @chit = Chit.new(users_params)
     if @chit.save
       flash[:success] = "Chit details saved!"
+      @caller = Member.find_by_name(@chit.person_called)
+      @caller.update_attribute(:chit_id, @chit.id)
       send_chit_details(@chit)
       redirect_to pages_path
     else

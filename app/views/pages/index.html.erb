@@ -2,22 +2,22 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
-    <p style = "text-align:center">number finished: <%= @chits.count %></p>
-    <p style = "text-align:center">number left: <%= 58 - @chits.count %></p>
+    <p style = "text-align:center"><font size="3" color="red">Chitty finished: <%= @chits.count %></font></p>
+    <p style = "text-align:center"><font size="3" color="red">chitty left: <%= 58 - @chits.count %></font></p>
     <p style = "text-align:center"><%= link_to "Add Details", new_chit_path, class: 'btn btn-primary btn-sm' %></p>
     <p style = "text-align:center"><%= link_to "Show Details", {:action=>"list", :controller=>"chits"}, class: 'btn btn-primary btn-sm'  %></p>
     </div>
     <div class="col-xs-9">
       <div class="row">
         <div class="col-xs-6">
-           <p style = "text-align:center"> Next date on:</p>
-           <p style = "text-align:center"><%= @date %></p>
+           <p style = "text-align:center"><font size="3" color="red"> Next date on:</font></p>
+           <p style = "text-align:center"><font size="3" color="green"><%= @date %></font></p>
            <p style = "text-align:center"><%= link_to "Send Messages", {:action=>"messages", :controller=>"pages"}, class: 'btn btn-primary btn-sm'  %></p>
         </div>
         <div class="col-xs-6">
           <div class="container">
            <div class="col-xs-3">
-           <p style = "text-align:center">number of members: <%= @members.count%></p>
+           <p style = "text-align:center"><font size="3" color="red">number of members: <%= @members.count%></font></p>
           <p style = "text-align:center"><%= link_to "Show Members", {:action=>"list", :controller=>"members"}, class: 'btn btn-primary btn-sm'  %></p>
           <p style = "text-align:center"><%= link_to "Add Member", new_member_path, class: 'btn btn-primary btn-sm' %></p>
            </div>
