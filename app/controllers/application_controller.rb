@@ -2,9 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def Admins_authorise
    current_user
-   if current_user.email == "admin@prismclub.com"
-    current_user.update_attribute(:role, "admin")
-   end
    if current_user != nil and current_user.role == "admin"
       puts "LOG IN"
      
