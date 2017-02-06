@@ -2,12 +2,14 @@
 <table class = "table table-bordered">
   <tr class = "bg-success">
     <th>Chit Id &nbsp; &nbsp; &nbsp;</th>
+    <th>Date </th>
     <th>Person Called</th>
     <th>Bar</th>
    </tr>
 <% @chits.each do |chit| %>
     <tr class = "bg-info">
      <td ><%= chit.id %></td>
+     <td><%= chit.date%></td>
      <td><%= chit.person_called %></td>
      <td><%= chit.bar%></td>
     </tr>
