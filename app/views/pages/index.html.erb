@@ -1,9 +1,9 @@
-
+<div class = "jumbotron">
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
     <p style = "text-align:center"><font size="3" color="red">Chitty finished: <%= @chits.count %></font></p>
-    <p style = "text-align:center"><font size="3" color="red">chitty left: <%= 58 - @chits.count %></font></p>
+    <p style = "text-align:center"><font size="3" color="red">chitty left: <%= 68 - @chits.count %></font></p>
     <p style = "text-align:center"><%= link_to "Add Details", new_chit_path, class: 'btn btn-primary btn-sm' %></p>
     <p style = "text-align:center"><%= link_to "Show Details", {:action=>"list", :controller=>"chits"}, class: 'btn btn-primary btn-sm'  %></p>
     </div>
@@ -28,6 +28,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 
