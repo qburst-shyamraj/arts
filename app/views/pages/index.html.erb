@@ -16,7 +16,7 @@
         </div>
         <div class="col-xs-6">
           <div class="container">
-           <div class="col-xs-3">
+           <div class="col-xs-6">
            <p style = "text-align:center"><font size="3" color="red">number of members: <%= @members.count%></font></p>
           <p style = "text-align:center"><%= link_to "Show Members", {:action=>"list", :controller=>"members"}, class: 'btn btn-primary btn-sm'  %></p>
           <p style = "text-align:center"><%= link_to "Add Member", new_member_path, class: 'btn btn-primary btn-sm' %></p>
