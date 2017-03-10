@@ -1,8 +1,8 @@
 module ApplicationHelper
 	def send_notification(member)
 		@twilio_number = "+17604886429"
-		account_sid = "ACf6a85dfb54bb7e820879392f7e23542c"
-		auth_token = "9a5ea4d8a1d303da43c6276f498af264"
+		account_sid = "AC9d081f446371d9982105c909123f2c2f"
+		auth_token = "24c069503e859f7a441d6d8085d4acc2"
 		@client = Twilio::REST::Client.new account_sid, auth_token
 		
 		reminder = "Hi #{member.name}, you have been added as a member in prism art and sports club kurry."
@@ -15,8 +15,8 @@ module ApplicationHelper
 	end
 	def send_chit_details(chit)
 		@twilio_number = "+17604886429"
-		account_sid = "ACf6a85dfb54bb7e820879392f7e23542c"
-		auth_token = "9a5ea4d8a1d303da43c6276f498af264"
+		account_sid = "AC9d081f446371d9982105c909123f2c2f"
+		auth_token = "24c069503e859f7a441d6d8085d4acc2"
 		@client = Twilio::REST::Client.new account_sid, auth_token
 		@members = Member.all
 		@members.each do |member|
@@ -31,8 +31,8 @@ module ApplicationHelper
 	end
 	def send_message_all(date)
 		@twilio_number = "+17604886429"
-		account_sid = "ACf6a85dfb54bb7e820879392f7e23542c"
-		auth_token = "9a5ea4d8a1d303da43c6276f498af264"
+		account_sid = "AC9d081f446371d9982105c909123f2c2f"
+		auth_token = "24c069503e859f7a441d6d8085d4acc2"
 		@client = Twilio::REST::Client.new account_sid, auth_token
 		@members = Member.all
 		@members.each do |member|
