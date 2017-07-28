@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
+	before_action :set_franchise, only: [:index]
 	include ApplicationHelper
 	def index
-		@members = Member.all
-		@chits = Chit.all
+		@chits = @franchise.chits.all
+		@members = @franchise.members
 		@date = select_date
 	end
 	def select_date
-		@chit = Chit.last
+		@chit = @chits.last
 		if @chit
 			last_date = @chit.date
 			end_date = last_date + 16

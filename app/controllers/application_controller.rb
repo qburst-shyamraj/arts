@@ -11,6 +11,16 @@ class ApplicationController < ActionController::Base
       redirect_to pages_path 
     end
   end
+
+  def current_franchise
+    Franchise.find(params[:id])
+  end
+
+  def set_franchise
+    @franchise = Franchise.find_by(params[:user_id])
+  end
+    # Use callbacks to share common setup or constraints between actions.
+    
   private
 
 	def current_user_session

@@ -4,4 +4,5 @@ class Chit < ApplicationRecord
 	validates :bar, presence: true
 	validates :amount_recieved, presence: true
 	belongs_to :member
+	belongs_to :franchise
 end

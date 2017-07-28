@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(user_session_params)
     if @user_session.save
       flash[:success] = "Welcome back!"
-      redirect_to pages_path
+      redirect_to franchises_path
     else
       render :new
     end

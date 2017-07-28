@@ -2,17 +2,17 @@ class ChitsController < ApplicationController
 	before_action :Admins_authorise, only:[:new, :create]
 	include ApplicationHelper
 	def new
-    @chit = Chit.new
+    @chit = @franchise.chits.new
   end
 
   def create
-    @chit = Chit.new(users_params)
+    @chit = @franchise.chits.new(users_params)
     if @chit.save
       flash[:success] = "Chit details saved!"
       @caller = Member.find_by_name(@chit.person_called)
       @caller.update_attribute(:chit_id, @chit.id)
-      send_chit_details(@chit)
-      redirect_to pages_path
+      #send_chit_details(@chit)
+      redirect_to franchise_pages_path(@franchise)
     else
       render :new
     end
