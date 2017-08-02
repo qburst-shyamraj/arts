@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'users#index'
   get 'pages/select_date'
   get 'pages/messages'
-  get 'franchise/:id/members/list'
-  get 'franchise/:id/chits/list'
+  # get 'franchise/:id/members/list'
+  # get 'franchise/:id/chits/list'
   resources :users, only: [:new, :create]
   resources :franchises do 
     resources :chits, only: [:new, :create]
