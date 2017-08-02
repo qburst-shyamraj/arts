@@ -5,20 +5,25 @@
     <p style = "text-align:center"><font size="3" color="red">Chitty finished: <%= @chits.count %></font></p>
     <p style = "text-align:center"><font size="3" color="red">chitty left: <%= @members.count - @chits.count %></font></p>
     <p style = "text-align:center"><%= link_to "Add Details", new_franchise_chit_path(@franchise), class: 'btn btn-primary btn-sm' %></p>
-    <p style = "text-align:center"><%= link_to "Show Details", {:action=>"list", :controller=>"chits"}, class: 'btn btn-primary btn-sm'  %></p>
+    <p style = "text-align:center"><%= link_to "Show Details", list_franchise_chit_path(@franchise, 1), class: 'btn btn-primary btn-sm'  %></p>
     </div>
     <div class="col-xs-9">
       <div class="row">
         <div class="col-xs-6">
            <p style = "text-align:center"><font size="3" color="red"> Next date on:</font></p>
            <p style = "text-align:center"><font size="3" color="green"><%= @date %></font></p>
-           <p style = "text-align:center"><%= link_to "Send Messages", {:action=>"messages", :controller=>"pages"}, class: 'btn btn-primary btn-sm'  %></p>
+          <div>
+           <p style = "text-align:center"><%= link_to "Send Messages", messages_franchise_page_path(@franchise, 1), class: 'btn btn-primary btn-sm'  %></p>
+          </div>
+          <div>
+            <p style = "text-align:center"><%= link_to "Create new kurry", new_franchise_path, class: 'btn btn-primary btn-sm'  %></p>
+          </div>
         </div>
         <div class="col-xs-6">
           <div class="container">
            <div class="col-xs-6">
            <p style = "text-align:center"><font size="3" color="red">number of members: <%= @members.count%></font></p>
-          <p style = "text-align:center"><%= link_to "Show Members", {:action=>"list", :controller=>"members"}, class: 'btn btn-primary btn-sm'  %></p>
+          <p style = "text-align:center"><%= link_to "Show Members",list_franchise_member_path(@franchise, 1), class: 'btn btn-primary btn-sm'  %></p>
           <p style = "text-align:center"><%= link_to "Add Member", new_franchise_member_path(@franchise), class: 'btn btn-primary btn-sm' %></p>
            </div>
        

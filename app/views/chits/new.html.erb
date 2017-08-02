@@ -1,6 +1,6 @@
 <div class="page-header"><h1>Add Details</h1></div>
 
-<%= form_for @chit do |f| %>
+<%= form_for ([@franchise, @chit]) do |f| %>
   <%= render 'shared/errors', object: @chit %>
   <div class="form-group">
     <%= f.label :Date%>
@@ -20,6 +20,8 @@
     <%= f.label :Bar%>
     <%= f.text_field :bar, class: 'form-control' %>
   </div>
-
+  <div>
   <%= f.submit 'ADD', class: 'btn btn-primary btn-lg' %>
+  <%= link_to 'Back', {:action => "index", :controller => "pages"}, class: 'btn btn-default btn-sm'%>
+  </div>
 <% end %>

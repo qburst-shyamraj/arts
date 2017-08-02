@@ -17,6 +17,8 @@
     <%= f.label :address %>
     <%= f.text_field :address, class: 'form-control' %>
   </div>
-
+  <div>
   <%= f.submit 'ADD', class: 'btn btn-primary btn-lg' %>
+  <%= link_to 'Back', {:action => "index", :controller => "pages"}, class: 'btn btn-default btn-sm'%>
+  </div>
 <% end %>

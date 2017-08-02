@@ -1,5 +1,6 @@
 class ChitsController < ApplicationController
 	before_action :Admins_authorise, only:[:new, :create]
+  before_action :set_franchise, only: [:new, :create, :list]
 	include ApplicationHelper
 	def new
     @chit = @franchise.chits.new
@@ -14,7 +15,7 @@ class ChitsController < ApplicationController
       #send_chit_details(@chit)
       redirect_to franchise_pages_path(@franchise)
     else
-      render :new
+       redirect_to new_franchise_chit_path(@franchise)
     end
   end
   def list

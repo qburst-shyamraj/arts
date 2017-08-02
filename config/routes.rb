@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'users#index'
+  root to: 'franchises#index'
   get 'pages/select_date'
   get 'pages/messages'
-  # get 'franchise/:id/members/list'
-  # get 'franchise/:id/chits/list'
+  
   resources :users, only: [:new, :create]
   resources :franchises do 
-    resources :chits, only: [:new, :create]
-    resources :members, only: [:new, :create]
-     resources :pages, only: [:index]
+    resources :chits, only: [:new, :create] do 
+      get 'list', :on => :member
+    end
+    resources :members, only: [:new, :create] do
+      get 'list', :on => :member
+    end
+     resources :pages, only: [:index] do
+     get 'messages', :on => :member
+    end
   end
  
   

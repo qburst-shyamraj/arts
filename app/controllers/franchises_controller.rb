@@ -22,7 +22,8 @@ class FranchisesController < ApplicationController
 	def update
 	end
 	def destroy
-		
+		Franchise.find_by(params[:user_id]).destroy
+		redirect_to root_path
 	end
 
 	def franchise_params
