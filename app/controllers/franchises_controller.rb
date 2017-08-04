@@ -23,7 +23,7 @@ class FranchisesController < ApplicationController
 	end
 	def destroy
 		Franchise.find_by(params[:user_id]).destroy
-		redirect_to root_path
+		render :index
 	end
 
 	def franchise_params

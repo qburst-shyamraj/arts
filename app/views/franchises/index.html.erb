@@ -10,17 +10,19 @@
         <tr class = "bg-success">
           <th>Chit Title &nbsp; &nbsp; &nbsp;</th>
          </tr>
-        <% @franchise.each do |franchise| %>
-            <tr class = "bg-info">
-             <td ><%= franchise.title %>
-               <p style = "text-align:center"><%= link_to "Select", franchise_pages_path(@franchise),class: 'btn btn-primary btn-sm' %>
-             <%= link_to "Edit", edit_franchise_path(franchise), class: 'btn btn-primary btn-sm' %>
-             <%= link_to "Destroy", franchise_path(@franchise), data: { confirm: 'Are you sure?' }, :method => :delete, class: 'btn btn-primary btn-sm' %></p>
-             </td>
-             
-            </tr>
-          
-        <% end %>
+        <% if @franchise %>
+          <% @franchise.each do |franchise| %>
+              <tr class = "bg-info">
+               <td ><%= franchise.title %>
+                 <p style = "text-align:center"><%= link_to "Select", franchise_pages_path(@franchise),class: 'btn btn-primary btn-sm' %>
+               <%= link_to "Edit", edit_franchise_path(franchise), class: 'btn btn-primary btn-sm' %>
+               <%= link_to "Destroy", franchise_path(@franchise), data: { confirm: 'Are you sure?' }, :method => :delete, class: 'btn btn-primary btn-sm' %></p>
+               </td>
+               
+              </tr>
+            
+          <% end %>
+        <%end %>
       </table> 
       <p style = "text-align:center"><%= link_to "Create new Kurry", new_franchise_path, class: 'btn btn-primary btn-sm' %>
       <%= link_to "Back", franchises_path, class: 'btn btn-primary btn-sm' %></p>
