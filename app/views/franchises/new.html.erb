@@ -19,6 +19,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :Chit_Type %>
+    <%= f.collection_select :chit_type_id, ChitType.order(:chit_type),:id,:chit_type, include_blank:true %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :Starting_date %>
     <%= f.date_field :date %>
   </div>
