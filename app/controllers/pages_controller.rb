@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+	before_action :authorise, only:[:index]
 	before_action :set_franchise, only: [:index]
 	include ApplicationHelper
 	def index

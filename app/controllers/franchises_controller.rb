@@ -1,4 +1,5 @@
 class FranchisesController < ApplicationController
+	before_action :Admins_authorise, only:[:new, :create, :edit, :update, :destroy]
 	def index
 		@franchise = Franchise.all
 	end
@@ -15,8 +16,7 @@ class FranchisesController < ApplicationController
 	      render :new
     	end
 	end
-	def show
-	end
+	
 	def edit
 		@franchise = set_franchise
 	end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :create]
   resources :franchises do 
-    resources :chits, only: [:new, :create] do 
+    resources :chits, only: [:new, :create, :show] do 
       get 'list', :on => :member
     end
     resources :members, only: [:new, :create] do

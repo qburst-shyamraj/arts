@@ -1,6 +1,7 @@
 class ChitsController < ApplicationController
-	before_action :Admins_authorise, only:[:new, :create]
-  before_action :set_franchise, only: [:new, :create, :list]
+	before_action :Admins_authorise, only:[:new, :create, :show]
+  before_action :authorise, only:[:list]
+  before_action :set_franchise, only: [:new, :create, :list, :show]
 	include ApplicationHelper
 	def new
     @chit = @franchise.chits.new
@@ -19,9 +20,11 @@ class ChitsController < ApplicationController
     end
   end
   def list
- 		@chits = Chit.all
+ 		@chits = @franchise.chits.all
  	end
-
+  def show
+    @chit =  @franchise.chits.find_by_id(params[:id])
+  end
   private
 
   def users_params

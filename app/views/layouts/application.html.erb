@@ -15,7 +15,9 @@
     <div id="navbar">
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
+          <li><%= link_to 'Home', {:action => "index", :controller => "franchises"}, class: 'btn btn-warning btn-xs' %></li>
           <li class="text-primary"><span><%= current_user.email %></span></li>
+
           <li><%= link_to 'Sign Out', sign_out_path, method: :delete, class: 'btn btn-danger btn-xs' %></li>
         <% else %>
           <li><%= link_to 'Sign In', sign_in_path, class: 'btn btn-success btn-xs' %></li>

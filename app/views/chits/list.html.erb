@@ -5,6 +5,7 @@
     <th>Date </th>
     <th>Person Called</th>
     <th>Bar</th>
+    <th> </th>
    </tr>
 <% @chits.each do |chit| %>
     <tr class = "bg-info">
@@ -12,6 +13,7 @@
      <td><%= chit.date%></td>
      <td><%= chit.person_called %></td>
      <td><%= chit.bar%></td>
+     <td><%=link_to 'View', franchise_chit_path(franchise_id: @franchise, id: chit.id)%></td>
     </tr>
   
 <% end %>

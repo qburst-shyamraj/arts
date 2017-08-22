@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
 	before_action :Admins_authorise, only:[:new, :create]
+  before_action :authorise, only:[:list]
   before_action :set_member, only: [:new, :create, :list]
   before_action :set_franchise, only: [:new, :create, :list]
 	include ApplicationHelper

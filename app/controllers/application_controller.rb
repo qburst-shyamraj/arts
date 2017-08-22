@@ -8,9 +8,19 @@ class ApplicationController < ActionController::Base
         #redirect_to login_list_path  
     else 
       flash[:danger] = "Insufficient rights!"
-      redirect_to pages_path 
+      redirect_to :controller => 'franchises', :action => 'index'
     end
   end
+
+  def authorise
+    if current_user != nil
+      puts "LOG IN"
+    else 
+      flash[:danger] = "Insufficient rights!"
+      redirect_to :controller => 'franchises', :action => 'index'
+    end
+  end
+
 
   def current_franchise
     Franchise.find(params[:id])
