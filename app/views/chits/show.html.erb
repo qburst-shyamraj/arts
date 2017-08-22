@@ -1,0 +1,10 @@
+<div class = "jumbotron">
+<div class="container">
+  <div class="row">
+  <p>Chit number : <%= @chit.id%></p>
+  <p>Person Called : <%= @chit.person_called%></p>
+  <p>Chitty rate   : <%= @chit.bar %></p>
+  </div>
+  <%= link_to 'Back', {:action => "index", :controller => "pages"}, class: 'btn btn-default btn-sm'%>
+ </div>
+</div>
